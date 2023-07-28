@@ -1,0 +1,143 @@
+/* Content Section */
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.content h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FA434B;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #E2383E;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.feature {
+    width: 300px;
+    text-align: center;
+    margin: 0 20px;
+}
+
+.feature i {
+    font-size: 40px;
+    color: #FA434B;
+    margin-bottom: 20px;
+}
+
+.feature h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 600px) {
+    .content {
+        padding: 20px;
+    }
+
+    .content h2 {
+        font-size: 20px;
+    }
+
+    .content p {
+        font-size: 14px;
+    }
+
+    .cta-button {
+        font-size: 16px;
+    }
+
+    .features {
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .feature {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+
+/* search */
+.search-results {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.search-results h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.results-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.results-list li {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Responsive Styles */
+
+@media screen and (max-width: 600px) {
+    .search-results {
+        padding: 20px;
+    }
+
+    .search-results h2 {
+        font-size: 20px;
+    }
+
+    .results-list li {
+        font-size: 14px;
+    }
+}
+
+/*  */

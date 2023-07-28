@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="registration-form">
+    <h2>Helper Registration</h2>
+    <form method="POST">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="phone_number">Phone Number</label>
+            <input type="text" id="phone_number" name="phone_number" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+            <label for="skills">Skills</label>
+            <p style="color: white;
+            background-color: #555;
+            font-size: larger;
+            font-family: cursive;
+            padding: 20px;
+            margin: 10px;"
+            >Only the 1st selected skills is selected</p>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="skills" value="Plumbing"> Plumbing</label>
+                <label><input type="checkbox" name="skills" value="Carpentry"> Carpentry</label>
+                <label><input type="checkbox" name="skills" value="Electrical"> Electrical</label>
+                <label><input type="checkbox" name="skills" value="Painting"> Painting</label>
+                <label><input type="checkbox" name="skills" value="Gardening"> Gardening</label>
+                <label><input type="checkbox" name="skills" value="Cleaning"> Cleaning</label>
+                <label><input type="checkbox" name="skills" value="Cooking"> Cooking</label>
+                <label><input type="checkbox" name="skills" value="Sewing"> Sewing</label>
+                <label><input type="checkbox" name="skills" value="Photography"> Photography</label>
+                <label><input type="checkbox" name="skills" value="Graphic Design"> Graphic Design</label>
+                <label><input type="checkbox" name="skills" value="Web Development"> Web Development</label>
+                <label><input type="checkbox" name="skills" value="Data Entry"> Data Entry</label>
+                <label><input type="checkbox" name="skills" value="Event Planning"> Event Planning</label>
+                <label><input type="checkbox" name="skills" value="Writing"> Writing</label>
+                <label><input type="checkbox" name="skills" value="Translation"> Translation</label>
+                <label><input type="checkbox" name="skills" value="Music"> Music</label>
+                <label><input type="checkbox" name="skills" value="Fitness Training"> Fitness Training</label>
+                <label><input type="checkbox" name="skills" value="Yoga"> Yoga</label>
+                <label><input type="checkbox" name="skills" value="Pet Care"> Pet Care</label>
+                <label><input type="checkbox" name="skills" value="House Cleaning"> House Cleaning</label>
+                <label><input type="checkbox" name="skills" value="Plastering"> Plastering</label>
+                <label><input type="checkbox" name="skills" value="Roofing"> Roofing</label>
+                <label><input type="checkbox" name="skills" value="Tiling"> Tiling</label>
+                <label><input type="checkbox" name="skills" value="Furniture Assembly"> Furniture Assembly</label>
+                <label><input type="checkbox" name="skills" value="Interior Design"> Interior Design</label>
+                <label><input type="checkbox" name="skills" value="Window Cleaning"> Window Cleaning</label>
+                <label><input type="checkbox" name="skills" value="Landscaping"> Landscaping</label>
+                <label><input type="checkbox" name="skills" value="Babysitting"> Babysitting</label>
+                <label><input type="checkbox" name="skills" value="Elderly Care"> Elderly Care</label>
+                <label><input type="checkbox" name="skills" value="Home Organization"> Home Organization</label>
+                <label><input type="checkbox" name="skills" value="Car Repair"> Car Repair</label>
+                <label><input type="checkbox" name="skills" value="Computer Repair"> Computer Repair</label>
+                <label><input type="checkbox" name="skills" value="Marketing"> Marketing</label>
+                <label><input type="checkbox" name="skills" value="Sales"> Sales</label>
+                <label><input type="checkbox" name="skills" value="Customer Service"> Customer Service</label>
+                <label><input type="checkbox" name="skills" value="Accounting"> Accounting</label>
+                <label><input type="checkbox" name="skills" value="Language Tutoring"> Language Tutoring</label>
+                <label><input type="checkbox" name="skills" value="Fitness Instruction"> Fitness Instruction</label>
+                <label><input type="checkbox" name="skills" value="Event Photography"> Event Photography</label>
+                <label><input type="checkbox" name="skills" value="Video Editing"> Video Editing</label>
+                <label><input type="checkbox" name="skills" value="Virtual Assistance"> Virtual Assistance</label>
+                <label><input type="checkbox" name="skills" value="Content Writing"> Content Writing</label>
+                <label><input type="checkbox" name="skills" value="Social Media Management"> Social Media Management</label>
+                <label><input type="checkbox" name="skills" value="SEO"> SEO</label>
+                <label><input type="checkbox" name="skills" value="Delivery"> Delivery</label>
+                <label><input type="checkbox" name="skills" value="Mini Truck"> Mini Truck</label>
+            </div>
+        </div>
+        <button type="submit">Register</button>
+    </form>
+</div>
+<style>
+    .registration-form {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 40px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .registration-form h2 {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        display: block;
+        font-size: 16px;
+        color: #555;
+        margin-bottom: 5px;
+    }
+
+    .form-group input,
+    .checkbox-group label {
+        font-size: 16px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .checkbox-group label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .form-group input[type="submit"] {
+        background-color: #FA434B;
+        color: white;
+        cursor: pointer;
+    }
+
+    /* Responsive Styles */
+
+    @media screen and (max-width: 600px) {
+        .registration-form {
+            padding: 20px;
+        }
+
+        .registration-form h2 {
+            font-size: 20px;
+        }
+
+        .form-group label,
+        .checkbox-group label {
+            font-size: 14px;
+        }
+
+        /* Add responsive styles as needed */
+    }
+</style>
+{% endblock %}

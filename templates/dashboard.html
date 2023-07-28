@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1 class="title">User Dashboard</h1>
+<h2 class="welcome">Welcome, {{ user.name }}!</h2>
+
+<div class="help-requests">
+    <h3 class="help-requests-title">Your Help Requests:</h3>
+    {% if help_requests %}
+    <ul class="help-requests-list">
+        {% for help_request in help_requests %}
+        <li>{{ help_request.task }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p class="no-help-requests">No help requests found.</p>
+    {% endif %}
+</div>
+<style>
+    .title {
+        text-align: center;
+        margin: 40px 0;
+        font-size: 30px;
+        color: #ecf0f1;
+        text-shadow: 2px 2px 4px #000000;
+        font-family: 'Cherry Swash', cursive;
+    }
+
+    .welcome {
+        text-align: center;
+        margin: 20px 0;
+        font-size: 24px;
+        color: #ffffff;
+    }
+
+    .help-requests {
+        text-align: center;
+        margin: 30px 0;
+    }
+
+    .help-requests-title {
+        font-size: 18px;
+        color: #ffffff;
+    }
+
+    .help-requests-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0 auto;
+        max-width: 500px;
+    }
+
+    .help-requests-list li {
+        margin-bottom: 10px;
+        padding: 5px;
+        background-color: #ffffff;
+        color: #000000;
+        border-radius: 5px;
+    }
+
+    .no-help-requests {
+        margin-top: 20px;
+        font-size: 16px;
+        color: #ffffff;
+    }
+</style>
+{% endblock %}

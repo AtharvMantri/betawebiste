@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<style>
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .requests-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .requests-table th,
+    .requests-table td {
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
+
+    .requests-table th {
+        background-color: #f2f2f2;
+    }
+
+    .requests-table td {
+        text-align: center;
+    }
+
+    .action-link {
+        display: inline-block;
+        padding: 5px 10px;
+        background-color: #4CAF50;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+
+    .action-link:hover {
+        background-color: #45a049;
+    }
+
+    @media screen and (max-width: 768px) {
+        .container {
+            padding: 10px;
+        }
+
+        .requests-table th,
+        .requests-table td {
+            padding: 5px;
+        }
+
+        .action-link {
+            font-size: 12px;
+            padding: 3px 8px;
+        }
+    }
+</style>
+
+</style>
+<div class="container">
+    <h2>Unapproved Requests</h2>
+    <table class="requests-table">
+        <thead>
+            <tr>
+                <th>Request ID</th>
+                <th>Task</th>
+                <th>Description</th>
+                <th>Address</th>
+                <th>Time</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for request in requests %}
+            <tr>
+                <td>{{ request.id }}</td>
+                <td>{{ request.task }}</td>
+                <td>{{ request.desc }}</td>
+                <td>{{ request.address }}</td>
+                <td>{{ request.time }}</td>
+                <td>{{ request.date }}</td>
+                <td>
+                    <a href="/approve_request/{{ request.id }}" class="action-link">Approve</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

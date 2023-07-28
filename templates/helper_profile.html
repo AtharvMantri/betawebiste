@@ -1,0 +1,173 @@
+<!-- helper_profile.html -->
+{% extends "base.html" %}
+{% block body %}
+<style>
+    /* Custom Fonts */
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* Container */
+    .container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    /* Profile Section */
+    .profile {
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+
+    .profile-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 20px;
+        animation: scaleUp 1s;
+    }
+
+    .profile-info {
+        font-size: 24px;
+        animation: slideInLeft 1s;
+    }
+
+    /* About Me Section */
+    .section {
+        margin-bottom: 40px;
+        animation: fadeInUp 1s;
+    }
+
+    h2 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        line-height: 1.5;
+    }
+
+    /* Contact Section */
+    .contact {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        animation: slideInRight 1s;
+    }
+
+    .contact-item i {
+        font-size: 20px;
+        margin-right: 5px;
+    }
+
+    .contact-item span {
+        margin-left: 5px;
+    }
+
+    /* Responsive Design */
+    @media screen and (max-width: 768px) {
+        .container {
+            padding: 10px;
+        }
+
+        .profile {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-img {
+            margin-bottom: 20px;
+        }
+
+        .profile-info {
+            text-align: center;
+        }
+    }
+
+    /* Animations */
+    @keyframes scaleUp {
+        from {
+            transform: scale(0);
+        }
+
+        to {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes slideInLeft {
+        from {
+            transform: translateX(-20px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideInRight {
+        from {
+            transform: translateX(20px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+</style>
+<div class="container">
+    {% for helper in helpers %}
+    <div class="profile">
+        {% if helper.skills == "Mini Truck" %}
+        <img class="profile-img" src="{{url_for('static', filename='truck.jpeg')}}" alt="Profile Photo">
+        {% else %}        
+        <img class="profile-img" src="https://source.unsplash.com/800x600/?{{helper.skills}}" alt="Profile Photo">
+        {% endif %}
+        <div class="profile-info">
+            <h1>Name: {{ helper.name }}</h1>
+            <p>Skill: {{ helper.skills }}</p>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Contact Information</h2>
+        <div class="contact">
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>{{ helper.phone_number }}</span>
+            </div>
+            <a href="tel:{{helper.phone_number}}">Call</a> <br><br><br>
+            <br><div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>{{ helper.email }}</span>
+            </div>
+            <a href="mailto:{{helper.email}}">Mail</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
